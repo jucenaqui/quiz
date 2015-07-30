@@ -14,10 +14,12 @@ router.get('/author', function(req,res){
 	res.render('author');
 });
 
-/* get /quizes/question*/
-router.get('/quizes/question', quizController.question);
-/* get /quizes/answer*/
-router.get('/quizes/answer', quizController.answer);
+// get /quizes
+router.get('/quizes', quizController.index);
+// get /quizes/:quizId(\\d+)
+router.get('/quizes/:quizId(\\d+)', quizController.show);
+/* get /quizes/:quizId(\\d+)/answer*/
+router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
 
 
 
