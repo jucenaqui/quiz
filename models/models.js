@@ -29,10 +29,26 @@
   sequelize.sync().then(function(){
     Quiz.count().then(function(count){
     	if(count === 0){
+        Quiz.create({
+          pregunta: 'Capital de Italia',
+          respuesta: 'Roma'
+        });
     		Quiz.create({
-    			pregunta: 'Capital de Italia',
-    			respuesta: 'Roma'
+    			pregunta: 'Capital de españa',
+    			respuesta: 'Madrid'
     		});
+        Quiz.create({
+          pregunta: 'Capital de Brasil',
+          respuesta: 'Rio de Janeiro'
+        });
+        Quiz.create({
+          pregunta: 'Capital de Colombia',
+          respuesta: 'Bogota'
+        });
+        Quiz.create({
+          pregunta: 'Capital de Argentina',
+          respuesta: 'Buenos Aires'
+        });
         Quiz.create({
           pregunta: 'Capital de Portugal',
           respuesta: 'Lisboa'

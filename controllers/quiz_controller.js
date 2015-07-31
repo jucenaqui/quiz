@@ -19,7 +19,20 @@ exports.index = function(req, res){
   	}).catch( function(error) { next(error); })
 };
 
-
+exports.search = function(req,res){
+	var buscar = req.query.search;
+	    if(buscar){
+		    var texto = (buscar || '').replace(" ", "%");
+			models.Quiz.findAll({where:["pregunta like ?", '%'+texto+'%'],order:'pregunta ASC'})
+			.then(function(quizes){
+			res.render('quizes/index', {quizes: quizes});
+			}).catch(function(error) { next(error);});
+		}else {
+			models.Quiz.findAll().then(function(quizes){
+			res.render('quizes/index', {quizes: quizes});
+			}).catch(function(error) { next(error);});
+		}
+};
 
 // get /quizes/show
 exports.show = function(req,res){
@@ -28,9 +41,10 @@ exports.show = function(req,res){
 
 // get /quizes/answer
 exports.answer = function(req,res){
-			var resultado = "Incorrecto";
-	 	if(req.query.respuesta === req.quiz.respuesta){
-	 		 resultado = "Correcto";
-	   }
+	var resultado = "Lo lamentamos --"+req.query.respuesta+"-- No es la respuesta Intentalo de Nuevo",
+	    resp  = req.query.respuesta.toUpperCase(),//answer to question
+	    reque = req.quiz.respuesta.toUpperCase() //answer in database
+	 	
+	 	if(resp === reque){ resultado = "Excelente "+req.query.respuesta+" Es la Respuesta Correcta";}
 		res.render('quizes/answer', { quiz: req.quiz, respuesta: resultado });
 };
