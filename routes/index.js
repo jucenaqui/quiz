@@ -4,30 +4,23 @@ var router = express.Router();
 var quizController = require('../controllers/quiz_controller');
 
 /* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Quiz' });
-});
-
-
+router.get('/', function(req, res) { res.render('index', { title: 'Quiz' });});
 //  autoload de comandos con quiz:Id
 router.param('quizId', quizController.load);
-
 // get /quizes
 router.get('/quizes', quizController.index);
-
 // get /quizes/search
 router.get('/quizes/search', quizController.search);
-
 // get /quizes/:quizId(\\d+)
 router.get('/quizes/:quizId(\\d+)', quizController.show);
-
 /* get /quizes/:quizId(\\d+)/answer*/
 router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
-
+// get /quizes/new
+router.get('/quizes/new', quizController.new);
+// get /quizes/create
+router.post('/quizes/create', quizController.create);
 /* get /author*/
-router.get('/author', function(req,res){
-	res.render('author');
-});
+router.get('/author', function(req,res){res.render('author'); });
 
 
 module.exports = router;
