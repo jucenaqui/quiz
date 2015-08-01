@@ -2,25 +2,25 @@ var express = require('express');
 var router = express.Router();
 
 var quizController = require('../controllers/quiz_controller');
+router.get('/', function(req, res){
+    res.render('index.ejs', { title: 'Quiz', errors: [] });
+});
 
-/* GET home page. */
-router.get('/', function(req, res) { res.render('index', { title: 'Quiz' });});
-//  autoload de comandos con quiz:Id
-router.param('quizId', quizController.load);
-// get /quizes
-router.get('/quizes', quizController.index);
-// get /quizes/search
-router.get('/quizes/search', quizController.search);
-// get /quizes/:quizId(\\d+)
-router.get('/quizes/:quizId(\\d+)', quizController.show);
-/* get /quizes/:quizId(\\d+)/answer*/
+// Autoload de comandos con :quizId
+router.param('quizId', quizController.load);  // autoload :quizId
+
+// Definición de rutas de /quizes
+router.get('/quizes',                      quizController.index);
+router.get('/quizes/:quizId(\\d+)',        quizController.show);
 router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
-// get /quizes/new
-router.get('/quizes/new', quizController.new);
-// get /quizes/create
-router.post('/quizes/create', quizController.create);
-/* get /author*/
-router.get('/author', function(req,res){res.render('author'); });
+router.get('/quizes/new',                  quizController.new);
+router.post('/quizes/create',              quizController.create);
+router.get('/quizes/search',               quizController.search);
+
+
+router.get('/author', function(req, res) {
+    res.render('author', { errors: []});
+});
 
 
 module.exports = router;

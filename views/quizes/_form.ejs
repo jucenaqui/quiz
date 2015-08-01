@@ -1,7 +1,9 @@
-<label for="preg">Pregunta:</label>
-<input type="text" id="preg" name="quiz[pregunta]" placeholder="Pregunta">
-<label for="resp">Respuesta:</label>
-<input type="text" id="resp" name="quiz[respuesta]" placeholder="Respuesta"><p><br>
-<a href="/quizes" class="Section-button"> <button type="button">Cancelar</button> </a>
-<input type="submit" class="Section-submit" value="Guardar">
+<label for="preg" class="rem">Pregunta:</label>
+<input type="text" id="preg" name="quiz[pregunta]" placeholder="<%=quiz.pregunta%>"/>
+<br>
+<label for="resp" class="rem">Respuesta:</label>
+<input type="text" id="resp" name="quiz[respuesta]" placeholder="<%=quiz.respuesta%>"> <p>
+<input type="submit" value="Guardar">
+<a href="/quizes"><button type="button">Cancelar</button></a>
 
+ 
