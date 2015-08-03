@@ -31,27 +31,33 @@
     	if(count === 0){
         Quiz.create({
           pregunta: 'Capital de Italia',
-          respuesta: 'Roma'
+          respuesta: 'Roma',
+          tema: "Ocio"
         });
     		Quiz.create({
     			pregunta: 'Capital de españa',
-    			respuesta: 'Madrid'
+    			respuesta: 'Madrid',
+          tema: "Otro"
     		});
         Quiz.create({
           pregunta: 'Capital de Brasil',
-          respuesta: 'Rio de Janeiro'
+          respuesta: 'Rio de Janeiro',
+          tema: "tecnologia"
         });
         Quiz.create({
           pregunta: 'Capital de Colombia',
-          respuesta: 'Bogota'
+          respuesta: 'Bogota',
+          tema: "Ocio"
         });
         Quiz.create({
           pregunta: 'Capital de Argentina',
-          respuesta: 'Buenos Aires'
+          respuesta: 'Buenos Aires',
+          tema: "ciencia"
         });
         Quiz.create({
           pregunta: 'Capital de Portugal',
-          respuesta: 'Lisboa'
+          respuesta: 'Lisboa',
+          tema: "Otro"
         })
     		.then(function(){console.log("Base de datos inicializada")});
     	}

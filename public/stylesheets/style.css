@@ -1,21 +1,38 @@
 * {
     margin: 0;
     padding: 0;
+   
 }
 body {
     font: 16px Georgia, serif;
 }
+a{
+    text-decoration: none;
+}
+#n1{
+    background-color: azure;
+    height: 400px;
+}
 
 #page-wrap {
-    margin: 2% auto;
-    color: white;
+    background-color: azure;
+    color: black;
+    width: 95%;
+    margin: 10px auto;
+    height: 400px;
 }
 
 #page-wrap > .main {
-    border: 1px solid #999;
+    border: 1px solid black;
     padding: 1%;
-	margin-bottom: 1px;
+	margin-bottom: 2px;
     color: black;
+}
+#n1{
+    height: 40px;
+}
+#s1{
+    height: 500px;
 }
 
 section > div {
@@ -23,24 +40,25 @@ section > div {
 }
 
 header, nav, section {
-    background: #eee;
+    background: azure;
     text-align: center;
 }
 
 footer {
-    background: #eee;
+    background:azure;
     text-align: center;
 }
 
 nav span {
     margin: 0px 10px 0px 0px;
+    height: 400px;
 }
 
 img {
-    height: 100px;
-    border-radius: 50%;
+    height: 200px;
+    border-radius: 45%;
     display: block;
-    margin: 0 auto;
+    margin: 30px auto;
     margin-bottom: 20px;
 }
 #ErrorMsgs{color: #f61; font-size: 1em;}
