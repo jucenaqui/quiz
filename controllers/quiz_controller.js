@@ -55,6 +55,15 @@ exports.update = function(req, res){
 
 };
 
+exports.destroy = function(req, res){
+
+      req.quiz.destroy().then(function(){
+             res.redirect('/quizes');
+      }).catch(function(error){
+          next(error);
+      });
+};
+
 // build new structure quiz by add question and answer
 exports.new = function(req, res){
      var quiz = models.Quiz.build(
