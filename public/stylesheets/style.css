@@ -13,6 +13,9 @@ a{
     background-color: azure;
     height: 400px;
 }
+#n1 span a{
+    font-size: 1.5em;
+}
 
 #page-wrap {
     background-color: azure;

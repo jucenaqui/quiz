@@ -6,10 +6,13 @@ a{
  text-decoration: none;
 }
 #n1{
-	height: 40px;
+	height: 70px;
 }
 #s1{
-	height: 700px
+	height: 900px
+}
+#n1 span a{
+    font-size: 1em;
 }
 
 h2 span, section h3 {
