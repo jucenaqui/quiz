@@ -8,6 +8,10 @@ a{
 #n1{
 	height: 70px;
 }
+.right{
+    float: right;
+    font-size: 1.3em;
+}
 #s1{
 	height: 900px
 }

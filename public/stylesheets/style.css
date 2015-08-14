@@ -9,6 +9,10 @@ body {
 a{
     text-decoration: none;
 }
+.right{
+    float: right;
+    font-size: 1.3em;
+}
 #n1{
     background-color: azure;
     height: 400px;

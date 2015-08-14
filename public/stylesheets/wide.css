@@ -8,6 +8,10 @@ body {
 #n1 span a{
     font-size: 1.5em;
 }
+.right{
+    float: right;
+    font-size: 1.3em;
+}
 
 nav {
     float: left;
