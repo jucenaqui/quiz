@@ -16,7 +16,7 @@ router.param('commentId', commentController.load);  // autoload :commentId
 // Definición de rutas session
 router.get('/login',                      sessionController.new);
 router.post('/login',                  sessionController.create);
-router.get('/logout',                 sessionController.destroy);
+router.get('/logout',                sessionController.destroy);
 
 // Definición de rutas de /quizes
 router.get('/quizes',                      quizController.index);

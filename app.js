@@ -8,6 +8,7 @@ var partials = require('express-partials');
 var methodOverride = require('method-override');
 var session = require('express-session');
 var routes = require('./routes/index');
+var moment = require('moment');
 
 var app = express();
 
@@ -32,6 +33,17 @@ app.use(function(req, res, next){
     }
     res.locals.session = req.session;
     next();
+});
+
+
+app.use(function(req, res, next) {
+	if (req.session.user && req.session.lastVisit) {
+		if ((new Date().getTime() - req.session.lastVisit) > 120000) {
+			delete req.session.user;
+		}
+	}
+	req.session.lastVisit = new Date().getTime();
+	next();
 });
 
 app.use('/', routes);

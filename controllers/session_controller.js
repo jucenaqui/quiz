@@ -1,3 +1,5 @@
+var moment = require('moment');
+
 // MW de autorizacion de acesso http
 exports.loginRequired = function(req, res, next){
 	if(req.session.user){
@@ -28,6 +30,7 @@ exports.create = function(req, res){
 		}
 
 		req.session.user = { id: user.id, username: user.username};
+		//req.session.time = moment(new Date());
 		res.redirect(req.session.redir.toString());//redirecciona al path anterior a login
 
 	});
